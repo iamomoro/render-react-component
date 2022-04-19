@@ -11,7 +11,7 @@ const Benz = () => {
         Mercedes-Benz produces consumer luxury vehicles and commercial vehicles.
       </div>
       <div className="mt-4">
-        <img width="60%" className="rounded" src={benzImage} alt="benz" />
+        <img width="60%" className="rounded-md" src={benzImage} alt="benz" />
       </div>
   
     </div>

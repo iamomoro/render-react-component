@@ -13,18 +13,7 @@ const Ferrari = () => {
       <div className="mt-4">
         <img width="60%" className="rounded" src={ferrariImage} alt="ferrari" />
       </div>
-      <div>
-        <span>
-          Photo by{" "}
-          <a href="https://unsplash.com/@viktortheo?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">
-            Viktor Theo
-          </a>{" "}
-          on{" "}
-          <a href="https://unsplash.com/s/photos/ferrari?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">
-            Unsplash
-          </a>
-        </span>
-      </div>
+   
     </div>
   );
 };

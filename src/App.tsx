@@ -29,15 +29,15 @@ export default function App() {
   const renderResult = () => {
     let result;
     car === "selectDreamCar"
-      ? (result = "select your dream car")
+      ? (result = "your dream car")
       : (result = makeFirstLetterCapital(car));
     return result;
   };
 
   return (
-    <div className="container mt-3">
+    <div className="container m-4 p-8 w-2/5 bg-blue-300">
       <div>
-        <h1>Hello {renderResult()}</h1>
+        <h1 className="font-bold">About {renderResult()}</h1>
       </div>
       <div className="mt-4">
         <select className="form-select" value={car} onChange={handleOnChange}>
@@ -47,9 +47,12 @@ export default function App() {
           <option value="audi">Audi</option>
         </select>
       </div>
+      <div>
       {ferrariContentVisible && <Ferrari />}
       {benzContentVisible && <Benz />}
       {audiContentVisible && <Audi />}
+      </div>
+   
     </div>
   );
 }
