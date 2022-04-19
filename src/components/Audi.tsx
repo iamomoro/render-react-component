@@ -1,4 +1,4 @@
-import audiImage from "../assets/roberto-nickson-IOI3KCYsn0o-unsplash.jpg";
+import audiImage from "../assets/audi.jpg";
 
 const Audi = () => {
   return (
@@ -13,18 +13,7 @@ const Audi = () => {
       <div className="mt-4">
         <img width="60%" className="rounded" src={audiImage} alt="audi" />
       </div>
-      <div>
-        <span>
-          Photo by{" "}
-          <a href="https://unsplash.com/@rpnickson?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">
-            Roberto Nickson
-          </a>{" "}
-          on{" "}
-          <a href="https://unsplash.com/s/photos/audi?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">
-            Unsplash
-          </a>
-        </span>
-      </div>
+ 
     </div>
   );
 };

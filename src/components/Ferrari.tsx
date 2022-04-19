@@ -1,4 +1,4 @@
-import ferrariImage from "../assets/viktor-theo-4OHpmh0gb30-unsplash.jpg";
+import ferrariImage from "../assets/ferrari.jpg";
 
 const Ferrari = () => {
   return (
