@@ -1,26 +1,55 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from "react";
+import Audi from "./components/Audi";
+import Benz from "./components/Benz";
+import Ferrari from "./components/Ferrari";
 
-function App() {
+export default function App() {
+  const [car, setCar] = useState("selectDreamCar");
+
+  const [ferrariContentVisible, setFerrariContentVisible] = useState(false);
+  const [benzContentVisible, setBenzContentVisible] = useState(false);
+  const [audiContentVisible, setAudiContentVisible] = useState(false);
+
+  useEffect(() => {
+    car === "ferrari"
+      ? setFerrariContentVisible(true)
+      : setFerrariContentVisible(false);
+    car === "benz" ? setBenzContentVisible(true) : setBenzContentVisible(false);
+    car === "audi" ? setAudiContentVisible(true) : setAudiContentVisible(false);
+  }, [car]);
+
+  const handleOnChange = (e) => {
+    setCar(e.target.value);
+  };
+
+  const makeFirstLetterCapital = (str) => {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+  };
+
+  const renderResult = () => {
+    let result;
+    car === "selectDreamCar"
+      ? (result = "select your dream car")
+      : (result = makeFirstLetterCapital(car));
+    return result;
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container mt-3">
+      <div>
+        <h1>Hello {renderResult()}</h1>
+      </div>
+      <div className="mt-4">
+        <select className="form-select" value={car} onChange={handleOnChange}>
+          <option value="selectDreamCar">Select your dream car</option>
+          <option value="ferrari">Ferrari</option>
+          <option value="benz">Benz</option>
+          <option value="audi">Audi</option>
+        </select>
+      </div>
+      {ferrariContentVisible && <Ferrari />}
+      {benzContentVisible && <Benz />}
+      {audiContentVisible && <Audi />}
     </div>
   );
 }
-
-export default App;
